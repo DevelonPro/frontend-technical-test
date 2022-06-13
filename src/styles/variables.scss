@@ -1,0 +1,16 @@
+// Colours
+$headerTextColour: #0C121C;
+$captionTextColour: #4B5055;
+$borderColour: #EEF1F1;
+$loadingSpinnerColour: $headerTextColour;
+
+// Fonts
+$fontFamilyBase: 'Roboto', Arial, sans-serif;
+
+// Breakpoints
+$tabletMinBreakpoint: 1024px;
+$mobileMinBreakpoint: 768px;
+$smallMobileMinBreakpoint: 480px;
+$tabletMaxBreakpoint: $tabletMinBreakpoint - 0.02;
+$mobileMaxBreakpoint: $mobileMinBreakpoint - 0.02;
+$smallMobileMaxBreakpoint: $smallMobileMinBreakpoint - 0.02;
