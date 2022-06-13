@@ -1,0 +1,96 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.vehicleItem {
+
+    &__inner {
+        @media (min-width: $tabletMinBreakpoint) {
+            @include marginInside(20px);
+        }
+
+        @media (min-width: $smallMobileMinBreakpoint) and (max-width: $mobileMaxBreakpoint) {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__image {
+        width: 100%;
+
+        @media (min-width: $smallMobileMinBreakpoint) and (max-width: $mobileMaxBreakpoint) {
+            width: 26.076%;
+            flex-shrink: 0;
+        }
+    }
+
+    &__content {
+        padding-left: 15px;
+        padding-right: 15px;
+
+        @media (min-width: $mobileMinBreakpoint) and (max-width: $tabletMaxBreakpoint) {
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
+
+        @media (min-width: $mobileMinBreakpoint) {
+            @include marginInside(30px);
+            text-align: center;
+        }
+
+        @media (max-width: $mobileMaxBreakpoint) {
+            align-self: center;
+            padding-left: 40px;
+            padding-right: 25px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            border-bottom: solid 1px $borderColour;
+        }
+    }
+
+    &__priceDescription {
+        @include marginInside(15px);
+    }
+
+    &__price,
+    &__description {
+        font-size: 17px;
+        color: $captionTextColour;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+
+    &__header {
+        display: inline-flex;
+        flex-direction: column;
+        color: $headerTextColour;
+        font-size: 24px;
+        letter-spacing: 2px;
+        position: relative;
+        margin-top: 0;
+
+        @media (max-width: $mobileMaxBreakpoint) {
+            margin-bottom: 5px;
+        }
+
+        @media (min-width: $mobileMinBreakpoint) {
+
+            &:before,
+            &:after {
+                content: "";
+                position: relative;
+                background-color: currentColor;
+                height: 2px;
+                display: block;
+                width: 100%;
+            }
+
+            &:before {
+                margin-bottom: 3px;
+            }
+
+            &:after {
+                margin-top: 4px;
+            }
+        }
+    }
+}

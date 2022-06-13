@@ -1,0 +1,31 @@
+.image {
+    position: relative;
+
+    &__scaling {
+        padding-bottom: 100%;
+    }
+
+    &__img,
+    &__loading {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    &__img {
+        animation: bgFade 1s;
+    }
+}
+
+@keyframes bgFade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

@@ -1,3 +1,32 @@
-.VehicleList {
+@import '../../styles/variables.scss';
+
+.vehicleList {
   width: 100%;
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    width: 100%;
+
+    @media (min-width: $mobileMinBreakpoint) and (max-width: $tabletMaxBreakpoint) {
+      width: 50%;
+
+      &:nth-child(2n+1) {
+
+        .vehicleItem {
+
+          &__content {
+            border-right: solid 1px $borderColour;
+          }
+        }
+      }
+    }
+
+    @media (min-width: $tabletMinBreakpoint) {
+      width: 25%;
+    }
+  }
 }
