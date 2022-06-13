@@ -1,6 +1,6 @@
 {
-    "extends": "airbnb",
-    "parser": "babel-eslint",
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
     "parserOptions": {
         "ecmaVersion": 6,
         "ecmaFeatures": {
@@ -22,21 +22,33 @@
         "react/forbid-prop-types": "off",
         "react/prop-types": "off",
         "react/prefer-stateless-function": "off",
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "react/jsx-filename-extension": [
+            1,
+            { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+        ],
         "linebreak-style": "off",
         "global-require": "off",
         "semi": "warn",
         "arrow-body-style": "off",
         "comma-dangle": "off",
-        "max-len":"off",
+        "max-len": "off",
         "react/jsx-closing-tag-location": "off",
         "react/no-multi-comp": "off",
-        "jsx-a11y/label-has-for": [ 2, {
-            "components": [ "Label" ],
-            "required": {
-                "some": [ "nesting", "id" ]
-            },
-            "allowChildren": false
-        }]
-    }
+        "jsx-a11y/label-has-for": [
+            2,
+            {
+                "components": ["Label"],
+                "required": {
+                    "some": ["nesting", "id"]
+                },
+                "allowChildren": false
+            }
+        ]
+    },
+    "extends": [
+        "airbnb",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+    ]
 }
