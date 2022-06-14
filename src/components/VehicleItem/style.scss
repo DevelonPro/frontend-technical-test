@@ -1,50 +1,119 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
+@mixin contentMobileMin {
+    @include marginInside(30px);
+    text-align: center;
+}
+
+@mixin contentMobileMax {
+    align-self: center;
+    border-bottom: solid 1px $borderColour;
+}
+
+@mixin headerBorder {
+
+    &:before,
+    &:after {
+        content: "";
+        position: relative;
+        background-color: currentColor;
+        height: 2px;
+        display: block;
+        width: 100%;
+    }
+
+    &:before {
+        margin-bottom: 3px;
+    }
+
+    &:after {
+        margin-top: 4px;
+    }
+}
+
 .vehicleItem {
 
-    &__inner {
-        @media (min-width: $tabletMinBreakpoint) {
+    &--disableMobileView {
+
+        .vehicleItem__inner {
             @include marginInside(20px);
         }
 
-        @media (min-width: $smallMobileMinBreakpoint) and (max-width: $mobileMaxBreakpoint) {
-            display: flex;
-            flex-wrap: nowrap;
+        .vehicleItem__content {
+            @include contentMobileMin;
+            @include contentMobileMax;
+        }
+
+        .vehicleItem__header {
+            @include headerBorder;
+        }
+    }
+
+    &:not(&--disableMobileView) {
+
+        .vehicleItem__inner {
+            @media (min-width: $tabletMinBreakpoint) {
+                @include marginInside(20px);
+            }
+
+            @media (min-width: $smallMobileMinBreakpoint) and (max-width: $mobileMaxBreakpoint) {
+                display: flex;
+                flex-wrap: nowrap;
+            }
+        }
+
+        .vehicleItem__image {
+
+            @media (min-width: $smallMobileMinBreakpoint) and (max-width: $mobileMaxBreakpoint) {
+                width: 26.076%;
+                flex-shrink: 0;
+            }
+        }
+
+        .vehicleItem__content {
+
+            @media (min-width: $mobileMinBreakpoint) and (max-width: $tabletMaxBreakpoint) {
+                padding-top: 20px;
+                padding-bottom: 30px;
+            }
+
+            @media (min-width: $mobileMinBreakpoint) {
+                @include contentMobileMin;
+            }
+
+            @media (max-width: $mobileMaxBreakpoint) {
+                @include contentMobileMax;
+                padding-left: 40px;
+                padding-right: 25px;
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+
+            @media (max-width: $smallMobileMaxBreakpoint) {
+                padding-left: 25px;
+            }
+        }
+
+        .vehicleItem__button {
+
+            @media (max-width: $mobileMaxBreakpoint) {
+                margin-top: 20px;
+            }
         }
     }
 
     &__image {
         width: 100%;
 
-        @media (min-width: $smallMobileMinBreakpoint) and (max-width: $mobileMaxBreakpoint) {
-            width: 26.076%;
-            flex-shrink: 0;
+        &:not(&--noClick) {
+            cursor: pointer;
         }
     }
 
     &__content {
         padding-left: 15px;
         padding-right: 15px;
-
-        @media (min-width: $mobileMinBreakpoint) and (max-width: $tabletMaxBreakpoint) {
-            padding-top: 20px;
-            padding-bottom: 30px;
-        }
-
-        @media (min-width: $mobileMinBreakpoint) {
-            @include marginInside(30px);
-            text-align: center;
-        }
-
-        @media (max-width: $mobileMaxBreakpoint) {
-            align-self: center;
-            padding-left: 40px;
-            padding-right: 25px;
-            padding-top: 25px;
-            padding-bottom: 25px;
-            border-bottom: solid 1px $borderColour;
-        }
     }
 
     &__priceDescription {
@@ -53,10 +122,7 @@
 
     &__price,
     &__description {
-        font-size: 17px;
-        color: $captionTextColour;
-        font-weight: 500;
-        letter-spacing: 1px;
+        @include vehicleContentText;
     }
 
     &__header {
@@ -73,24 +139,24 @@
         }
 
         @media (min-width: $mobileMinBreakpoint) {
-
-            &:before,
-            &:after {
-                content: "";
-                position: relative;
-                background-color: currentColor;
-                height: 2px;
-                display: block;
-                width: 100%;
-            }
-
-            &:before {
-                margin-bottom: 3px;
-            }
-
-            &:after {
-                margin-top: 4px;
-            }
+            @include headerBorder;
         }
+    }
+
+    &__button {
+        background-color: $headerTextColour;
+        border: none;
+        color: white;
+        padding: 10px 22px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    &,
+    &__inner {
+        height: 100%;
     }
 }

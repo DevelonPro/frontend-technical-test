@@ -1,12 +1,17 @@
 import classNames from 'classnames';
 import * as React from 'react';
-import { CoreComponent } from '../../types/components';
+import { LoadingProps } from './types';
 import './style.scss';
 
-const Loading: React.FC<CoreComponent> = ({ className = null }) => {
+const Loading: React.FC<LoadingProps> = ({ className = null, message = null }) => {
   return (
     <div className={classNames('loading', className)}>
-      <div className="loading__inner" />
+      <div className="loading__spinner" />
+      {message && (
+        <div className="loading__message">
+          {message}
+        </div>
+      )}
     </div>
   );
 };

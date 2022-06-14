@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import * as React from 'react';
 import { useVehicles } from '../../store';
-import { CoreComponent } from '../../types/components';
 import VehicleItem from '../VehicleItem';
+import { CoreComponent } from '../../types/components';
 import './style.scss';
 
 const VehicleList: React.FC<CoreComponent> = ({ className = null }) => {

@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.vehicleMeta {
+
+    &__inner {
+        text-align: center;
+
+        @include marginInside(10px);
+
+        > * {
+            @include vehicleContentText;
+        }
+    }
+}

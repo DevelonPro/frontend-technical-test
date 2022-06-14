@@ -1,12 +1,13 @@
 import classNames from 'classnames';
 import * as React from 'react';
 import loadImage from '../../helpers/loadImage';
-import { CoreComponent } from '../../types/components';
 import Loading from '../Loading';
 import './style.scss';
 import { ImageProps } from './types';
 
-const Image: React.FC<ImageProps & CoreComponent> = ({ full, scalingPercentage = null, className = null }) => {
+const Image: React.FC<ImageProps> = ({
+  full, scalingPercentage = null, className = null, onClick
+}) => {
   const [imageFull, setImageFull] = React.useState<HTMLImageElement>(null);
 
   React.useEffect(() => {
@@ -14,7 +15,7 @@ const Image: React.FC<ImageProps & CoreComponent> = ({ full, scalingPercentage =
   }, []);
 
   return (
-    <div className={classNames('image', className)}>
+    <div onClick={onClick} className={classNames('image', className)}>
       <div className="image__scaling" style={{ paddingBottom: scalingPercentage && `${scalingPercentage}%` }}>
         {!imageFull ? (
           <Loading className="image__loading" />
