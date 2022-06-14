@@ -14,7 +14,7 @@ export interface vehicleAdditionalInfo {
     id: number;
     description: string;
     price: string;
-    meta: vehicleMeta[];
+    meta: vehicleMeta;
 }
 
 export interface vehicleMedia {

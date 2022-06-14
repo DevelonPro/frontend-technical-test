@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 export interface CoreComponent {
-    className?: string|string[]
+    className?: React.ComponentProps<'div'>['className']
 }
