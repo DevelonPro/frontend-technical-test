@@ -2,7 +2,7 @@ import * as React from 'react';
 import getData from './api';
 import { StoreInitContext } from './types/store';
 
-const VehiclesContext = React.createContext<StoreInitContext | null>(null);
+const VehiclesContext = React.createContext<StoreInitContext>(null);
 
 const VehiclesProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [vehicles, setVehicles] = React.useState<StoreInitContext['vehicles']>([]);
