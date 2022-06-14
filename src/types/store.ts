@@ -1,7 +1,7 @@
-import { vehicleSummaryPayload } from './api';
+import { VehicleSummaryPayload } from './api';
 
-export interface storeInitContext {
+export interface StoreInitContext {
     loading: boolean;
     error: string;
-    vehicles: Array<vehicleSummaryPayload>
+    vehicles: VehicleSummaryPayload[]
 }

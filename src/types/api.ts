@@ -1,39 +1,39 @@
-export interface vehicleEmissions {
+export interface VehicleEmissions {
     template: string;
     value: number;
 }
 
-export interface vehicleMeta {
+export interface VehicleMeta {
     passengers: number;
     drivetrain: string[];
     bodystyles: string[];
-    emissions: vehicleEmissions;
+    emissions: VehicleEmissions;
 }
 
-export interface vehicleAdditionalInfo {
+export interface VehicleAdditionalInfo {
     id: number;
     description: string;
     price: string;
-    meta: vehicleMeta;
+    meta: VehicleMeta;
 }
 
-export interface vehicleMedia {
+export interface VehicleMedia {
     name: string;
     url: string;
 }
 
-export interface vehicleRawPayload {
+export interface VehicleRawPayload {
     id: string;
     modelYear: string;
     apiUrl: string;
-    media: [vehicleMedia, vehicleMedia];
+    media: [VehicleMedia, VehicleMedia];
 }
 
-export interface vehicleSummaryPayload extends Omit<vehicleRawPayload, 'apiUrl'> {
-    additionalInfo: vehicleAdditionalInfo;
+export interface VehicleSummaryPayload extends Omit<VehicleRawPayload, 'apiUrl'> {
+    additionalInfo: VehicleAdditionalInfo;
 }
 
-export interface request {
+export interface Request {
     data: any;
     status: number;
 }

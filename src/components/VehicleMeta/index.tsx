@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { vehicleMeta } from '../../types/api';
+import { VehicleMeta } from '../../types/api';
 import { CoreComponent } from '../../types/components';
 import './style.scss';
 
-const VehicleMeta: React.FC<CoreComponent & vehicleMeta> = ({
+const VehicleMeta: React.FC<CoreComponent & VehicleMeta> = ({
   passengers,
   drivetrain,
   bodystyles,
