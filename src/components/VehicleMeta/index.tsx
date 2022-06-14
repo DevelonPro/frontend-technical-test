@@ -1,6 +1,5 @@
 import classNames from 'classnames';
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import { VehicleMeta } from '../../types/api';
 import { CoreComponent } from '../../types/components';
 import './style.scss';
