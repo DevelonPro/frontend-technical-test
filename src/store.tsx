@@ -15,7 +15,7 @@ const VehiclesProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
       return;
     }
 
-    (async() => {
+    (async () => {
       try {
         setVehicles(await getData());
       } catch (e) {
